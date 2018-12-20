@@ -1,6 +1,3 @@
-# WlasnyPlikGraficzny
-Specyfikacja i implementacja obsługi rastrowego pliku graficznego rejestrującego obraz kolorowy (z wykorzystaniem 32 narzuconych oraz 32 dedykowanych barw) i w 32 stopniowej skali szarości we wszystkich przypadkach opierającego się na kompresji RLE. Do zapisu nieskompresowanych punktów obrazu wykorzystywane jest 5 bitów na piksel. Aplikacja dokonaje konwersji z pliku BMP do nowego rodzaju pliku graficznego (z możliwością wyboru trybu: kolor lub skala szarości) oraz z nowego rodzaju pliku do formatu BMP.
-
 # Zespół4_etap
 
 **POLAK MACIEJ, PRANICA JAKUB, SZEWCZYK BARBARA, TROJAN ROBERT**
@@ -17,24 +14,7 @@ miejsce w formacie PNG. Do zapisu nieskompresowanych punktów obrazu wykorzystyw
 konwersji z pliku BMP do nowego rodzaju pliku graficznego (z możliwością wyboru trybu: kolor
 lub skala szarości) oraz z nowego rodzaju pliku do formatu BMP.
 
-# Specyfikacja projektu w formie tabeli:
-
-# Struktura w programie:
-
-typedef struct PSKRINFOHEADER {
-char signature[2] = {'S','T'};
-int width;
-int height;
-int colorMode; //0=skala szarosci, 1=kolory narzucone, 2=paleta dedykowana
-} PSKRINFOHEADER;
-
-struct RGB {
-Uint8 r;
-Uint8 g;
-Uint8 b;
-};
-
-std::map<Uint8,RGB> paletaDedykowana;
+# Specyfikacja projektu:
 
 ```
 Rozmiar Opis
@@ -76,6 +56,23 @@ Kompresja
 ```
 Używana kompresja RLE
 ```
+
+# Struktura w programie:
+
+typedef struct PSKRINFOHEADER {
+char signature[2] = {'S','T'};
+int width;
+int height;
+int colorMode; //0=skala szarosci, 1=kolory narzucone, 2=paleta dedykowana
+} PSKRINFOHEADER;
+
+struct RGB {
+Uint8 r;
+Uint8 g;
+Uint8 b;
+};
+
+std::map<Uint8,RGB> paletaDedykowana;
 
 # Obliczanie palety:
 
