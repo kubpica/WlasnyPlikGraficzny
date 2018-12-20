@@ -1,4 +1,4 @@
-# Zespół4_etap
+# Specyfikacja rastrowego pliku graficznego
 
 **POLAK MACIEJ, PRANICA JAKUB, SZEWCZYK BARBARA, TROJAN ROBERT**
 
